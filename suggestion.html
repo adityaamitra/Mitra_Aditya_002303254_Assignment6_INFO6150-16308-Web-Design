@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion - Book Club</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="other-background">
+        <div class="container mt-5">
+            <h1 class="text-center">Suggestion Form</h1>
+            <form>
+                <h2>Personal Information</h2>
+                
+                <div class="mb-3">
+                    <label for="first-name" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="first-name" name="first_name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="last-name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="last-name" name="last_name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ph" class="form-label">Phone Number:</label>
+                    <input type="tel" class="form-control" id="ph" name="ph">
+                </div>
+
+                <h2>Book Information</h2>
+                
+                <div class="mb-3">
+                    <label for="book-title" class="form-label">Name of the Book:</label>
+                    <input type="text" class="form-control" id="book-title" name="book_title" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Genre:</label>
+                    <input type="text" class="form-control" id="genre" name="genre" required>
+                </div>
+
+                <h2>Gender</h2>
+                
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="gender" value="male" required>
+                        <label class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="gender" value="female">
+                        <label class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="gender" value="prefer_not_to_say">
+                        <label class="form-check-label">Prefer Not to Say</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 Aditya's Book Club. All rights reserved.</p>
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

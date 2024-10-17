@@ -1,0 +1,237 @@
+@import '_variables';
+@import '_mixins';
+@import '_suggestion';
+
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #7ce3a7;
+    --footer-color: #333;
+}
+
+
+@function darken-color($color, $amount) {
+    @return darken($color, $amount);
+}
+
+
+%grid-flex-item {
+    color: white;
+    padding: 15px;
+    text-align: center;
+    @include border-radius($border-radius);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+h1, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: $font-stack;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+    li {
+        margin: 0 1rem;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+    background-color: beige;
+}
+
+.book {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+
+    img {
+        max-width: 150px;
+        height: auto;
+        border-radius: 4px;
+        margin-right: 1rem;
+    }
+
+    .book-info {
+        text-align: left;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: #555;
+
+        strong {
+            color: #333;
+        }
+    }
+}
+
+footer {
+    background: var(--footer-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.grid-layout {
+    margin: 20px 0;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
+        max-width: 1200px; 
+        margin: 0 auto; 
+    }
+
+    .grid-item {
+        background-color: var(--primary-color); 
+        @extend %grid-flex-item;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken-color(#3498db, 10%); 
+        }
+    }
+}
+
+
+.grid-layout-2 {
+    margin: 20px 0;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 40px;
+        max-width: 1200px; 
+        margin: 0 auto; 
+    }
+
+    .grid-item {
+        background-color: var(--primary-color); 
+        @extend %grid-flex-item;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken-color(#3498db, 10%); 
+        }
+    }
+}
+
+
+.flex-layout {
+    margin: 20px 0;
+
+    .flex-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .flex-item {
+        background-color: var(--secondary-color); 
+        @extend %grid-flex-item;
+        margin: 10px;
+        flex: 1 1 120px; 
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken-color(#2ecc71, 10%); 
+        }
+    }
+}
+
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.button {
+    background-color: var(--primary-color); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken-color(#3498db, 10%); 
+    }
+}
+
+.alert {
+    padding: 15px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 20px;
+
+    &.success {
+        background-color: #4CAF50;
+    }
+
+    &.info {
+        background-color: #2196F3;
+    }
+
+    &.warning {
+        background-color: #ff9800;
+    }
+}
